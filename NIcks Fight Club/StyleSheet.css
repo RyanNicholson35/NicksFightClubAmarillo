@@ -1,0 +1,291 @@
+﻿body {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,0,0,1) 35%, rgba(144,1,1,0.7847514005602241) 100%);
+}
+
+.center {
+    text-align: center;
+}
+
+#slider {
+    overflow: hidden;
+}
+
+    #slider figure {
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        animation: 20s slider infinite;
+    }
+
+        #slider figure img {
+            width: 20%;
+            float: left;
+        }
+
+
+.placeholder {
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    width: 70%;
+    height: 0;
+    padding-bottom: 40%;
+    background: #4c4c4c;
+    border: solid 10px #2c2c2c;
+}
+
+#i1, #i2, #i3, #i4, #i5, #i6, #i7, #i8, #i9 {
+    display: none;
+}
+
+
+.pre, .nxt {
+    width: 12%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(88,88,88,.4);
+    z-index: 99;
+    cursor: pointer;
+}
+
+.nav2 {
+    width: 100%;
+    height: 11px;
+    bottom: 12%;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+}
+
+.dots {
+    top: -5px;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(0,0,0,.6);
+}
+
+
+.pre {
+    left: 0;
+}
+
+.nxt {
+    right: 0;
+}
+
+.slide_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+    .slide_img img {
+        width: 100%;
+        height: 100%;
+    }
+
+.slide_img {
+    z-index: -1;
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three,
+#i4:checked ~ #four,
+#i5:checked ~ #five,
+#i6:checked ~ #six,
+#i7:checked ~ #seven,
+#i8:checked ~ #eight,
+#i9:checked ~ #nine {
+    z-index: 9;
+}
+
+
+
+
+    
+
+    #i1:checked ~ .nav2 #dot1,
+    #i2:checked ~ .nav2 #dot2,
+    #i3:checked ~ .nav2 #dot3,
+    #i4:checked ~ .nav2 #dot4,
+    #i5:checked ~ .nav2 #dot5,
+    #i6:checked ~ .nav2 #dot6,
+    #i7:checked ~ .nav2 #dot7,
+    #i8:checked ~ .nav2 #dot8,
+    #i9:checked ~ .nav2 #dot9 {
+        background: #fff;
+    }
+
+
+
+
+
+
+.thickborder {
+    border: thick;
+    border-bottom-color: white
+}
+
+.background {
+    background-color: #36454f;
+}
+
+
+.condense {
+    max-width: 500px;
+    margin: auto;
+}
+
+.boldfont {
+    font-family: 'Roboto', sans-serif;
+}
+
+.border {
+    border-bottom-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    border-bottom: solid;
+    background-color: #36454f;
+}
+
+.italic {
+    font-style: italic;
+}
+
+
+.textwhite {
+    color: white;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+.lines div {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width:1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+        z-index: 100;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #36454f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 100;
+    }
+
+        .nav-links li {
+            opacity: 0;
+        }
+
+    .lines {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.hours {
+    font-style: italic;
+    font-display: block;
+    text-align: center;
+}
+
+.centervideo {
+    align-content: center;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+}
